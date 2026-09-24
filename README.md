@@ -4,12 +4,19 @@ Deep space black, copper highlights, and warm peach text. A dark Omarchy theme
 inspired by *The Expanse*, with an analogous palette from Aether and just enough
 transparency to let the artwork show through.
 
-![Expanse wallpaper: a spacecraft against deep space](preview.png)
+## Preview
+
+![Expanse with copper window borders, translucent terminals, btop, and system information](docs/expanse-preview.png)
+
+![Expanse desktop with warm accents and translucent widgets over a station wallpaper](docs/expanse-preview2.png)
+
+The screenshots show a customized desktop. Desktop widgets and the optional
+window transparency setup are not installed by the theme itself.
 
 ## The look
 
 - Copper orange accents with dusty rose, coral, and ochre supporting colors.
-- Warm text on black, with high-contrast selected text.
+- Warm text on black, with a distinct gray text-selection background, including in VS Code.
 - Subtly translucent bar, menus, popups, and notifications.
 - Seven 2880 × 1800 wallpapers, with the original spacecraft image first.
 - Colors generated through Omarchy’s app templates; no bundled terminal or editor executables.
@@ -20,6 +27,7 @@ transparency to let the artwork show through.
 | --- | --- |
 | Background | `#000000` |
 | Foreground | `#f1ddd5` |
+| Selection background | `#606060` |
 | Accent | `#db7c3e` |
 | Rose | `#b1636a` |
 | Coral | `#d67066` |
@@ -29,8 +37,7 @@ transparency to let the artwork show through.
 
 Requires an Omarchy version that supports `colors.toml` and
 `shell.<section>.toml` theme overrides. Prepared against the Omarchy v4 theme
-format. The installation URL below is the intended repository location and
-becomes available once this project is published.
+format.
 
 ```sh
 omarchy theme install https://github.com/mcsmith3/omarchy-expanse-theme
@@ -81,7 +88,9 @@ window settings are deliberately kept in your own Hyprland configuration.
 `colors.toml` is the palette source. `shell.bar.toml`, `shell.menu.toml`,
 `shell.popups.toml`, and `shell.notifications.toml` retain complete shell
 sections with transparency settings. Their literal colors should be updated
-alongside the palette. Reapply the theme after editing.
+alongside the palette. `vscode-theme.json` is an Omarchy-generated palette snapshot
+with stronger gray selections for VS Code and its integrated terminal. Update
+its colors alongside palette changes as well. Reapply the theme after editing.
 
 For personal wallpapers, use `~/.config/omarchy/backgrounds/expanse/` so they
 remain separate from the repository. Back up theme edits before pulling updates

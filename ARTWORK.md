@@ -1,9 +1,13 @@
 # Artwork credits
 
-The seven wallpaper files were supplied from the theme author’s personal
-collection. Original source URLs, artist names, and redistribution terms have
-not yet been verified. No authorship or redistribution license is claimed for
-these images, and the theme’s MIT license does not cover them.
+The seven wallpapers were sourced from the
+[ProtoMolecule user page on Wallhaven](https://wallhaven.cc/user/protomolecule),
+as identified by the theme maintainer. This credits the upload source;
+it does not identify or verify the original artists.
+
+The theme maintainer does not claim authorship of the wallpapers. The theme’s
+MIT license does not cover these images. Individual artist credits and
+redistribution terms remain unverified.
 
 | Repository file | Supplied file |
 | --- | --- |
@@ -18,5 +22,5 @@ these images, and the theme’s MIT license does not cover them.
 `preview.png` is an unchanged copy of `expanse2.png`. Descriptive names in the
 README identify the images in this collection and are not official titles.
 
-Record source links, artist attribution, and applicable permissions here before
-distributing the artwork publicly.
+The source profile is recorded above. Individual image links, artist credits,
+and applicable permissions can be added to the table as they are confirmed.
