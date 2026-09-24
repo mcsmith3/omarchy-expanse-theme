@@ -1,0 +1,34 @@
+# Expanse — analogous palette exported from Aether for Omarchy v4.
+# Selected text uses the foreground color for readable contrast.
+mode = "dark"
+
+accent = "#db7c3e"
+selection = "#1a1a1a"
+selection_foreground = "#f1ddd5"
+muted = "#686163"
+
+background = "#000000"
+dark_background = "#000000"
+darker_background = "#000000"
+lighter_background = "#1a1a1a"
+
+foreground = "#f1ddd5"
+dark_foreground = "#b5a6a0"
+light_foreground = "#f3e2db"
+bright_foreground = "#f5e6e0"
+
+red = "#b1636a"
+yellow = "#a86751"
+orange = "#bd7a80"
+green = "#d67066"
+cyan = "#c08933"
+blue = "#db7c3e"
+magenta = "#a16932"
+brown = "#71494d"
+
+bright_red = "#de848c"
+bright_yellow = "#d28064"
+bright_green = "#ff887c"
+bright_cyan = "#e8a63d"
+bright_blue = "#ff964d"
+bright_magenta = "#c9843e"

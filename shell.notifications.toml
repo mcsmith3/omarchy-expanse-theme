@@ -1,0 +1,11 @@
+# Expanse: subtle surface transparency.
+[notifications]
+background       = "#000000"
+background-alpha = 0.96
+text             = "#f1ddd5"
+# Conventionally matches the Hyprland active-window border. Border accepts
+# either a solid color or the full active-border gradient.
+border           = "hyprland.active-border"
+border-alpha     = 1.0
+# border-width     = 2
+countdown        = "#db7c3e"

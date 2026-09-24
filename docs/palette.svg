@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="156" viewBox="0 0 960 156" role="img" aria-label="Expanse color palette">
+<rect width="960" height="156" rx="12" fill="#101010"/>
+<rect x="16" y="16" width="148" height="66" rx="6" fill="#000000" stroke="#333333"/><text x="16" y="109" fill="#f1ddd5" font-family="sans-serif" font-size="16">Background</text><text x="16" y="135" fill="#b5a6a0" font-family="monospace" font-size="14">#000000</text>
+<rect x="172" y="16" width="148" height="66" rx="6" fill="#f1ddd5" stroke="#333333"/><text x="172" y="109" fill="#f1ddd5" font-family="sans-serif" font-size="16">Foreground</text><text x="172" y="135" fill="#b5a6a0" font-family="monospace" font-size="14">#f1ddd5</text>
+<rect x="328" y="16" width="148" height="66" rx="6" fill="#db7c3e" stroke="#333333"/><text x="328" y="109" fill="#f1ddd5" font-family="sans-serif" font-size="16">Copper</text><text x="328" y="135" fill="#b5a6a0" font-family="monospace" font-size="14">#db7c3e</text>
+<rect x="484" y="16" width="148" height="66" rx="6" fill="#b1636a" stroke="#333333"/><text x="484" y="109" fill="#f1ddd5" font-family="sans-serif" font-size="16">Rose</text><text x="484" y="135" fill="#b5a6a0" font-family="monospace" font-size="14">#b1636a</text>
+<rect x="640" y="16" width="148" height="66" rx="6" fill="#d67066" stroke="#333333"/><text x="640" y="109" fill="#f1ddd5" font-family="sans-serif" font-size="16">Coral</text><text x="640" y="135" fill="#b5a6a0" font-family="monospace" font-size="14">#d67066</text>
+<rect x="796" y="16" width="148" height="66" rx="6" fill="#c08933" stroke="#333333"/><text x="796" y="109" fill="#f1ddd5" font-family="sans-serif" font-size="16">Ochre</text><text x="796" y="135" fill="#b5a6a0" font-family="monospace" font-size="14">#c08933</text>
+</svg>

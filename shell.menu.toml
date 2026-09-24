@@ -1,0 +1,17 @@
+# Expanse: subtle surface transparency.
+[menu]
+# Cards, rows, and selected-row treatment. Alpha companions (where present)
+# go from 0 (invisible) to 1 (opaque). scrim is the full-screen dim layer
+# behind the card. Clipboard and emojis inherit these tokens.
+background                = "#000000"
+background-alpha          = 0.96
+text                      = "#f1ddd5"
+border                    = "hyprland.active-border-foreground"
+border-alpha              = 1.0
+scrim                     = "#000000"
+scrim-alpha               = 0.5
+selected-background       = "#f1ddd5"
+selected-background-alpha = 0.08
+selected-text             = "#db7c3e"
+selected-border           = "hyprland.active-border-foreground"
+selected-border-alpha     = 0.25

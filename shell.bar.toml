@@ -1,0 +1,14 @@
+# Expanse: subtle surface transparency.
+[bar]
+# Alpha companions (where present) range from 0 (invisible) to 1 (opaque).
+background       = "#000000"
+background-alpha = 0.94
+text             = "#f1ddd5"
+# Modules calling attention to themselves (recording, voxtype, alerts, updates)
+active           = "#b1636a"
+# Cross-axis size at font base-size 12. size-horizontal is the height of
+# top/bottom bars; size-vertical is the width of left/right bars. With
+# scale-with-font enabled, these grow/shrink with [font] base-size.
+scale-with-font  = true
+size-horizontal  = 26
+size-vertical    = 28

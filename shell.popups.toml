@@ -1,0 +1,12 @@
+# Expanse: subtle surface transparency.
+[popups]
+# Shared by every bar flyout (dropdowns, OSD, popup cards).
+# Border accepts either a solid color or a Hyprland-style gradient. Border
+# widths accept one CSS-style scalar/list: N, "Y X", "T X B", or "T R B L";
+# individual border-width-top/right/bottom/left keys override the list.
+background       = "#000000"
+background-alpha = 0.96
+text             = "#f1ddd5"
+border           = "hyprland.active-border"
+border-alpha     = 1.0
+# border-width     = 2
