@@ -10,6 +10,10 @@ ShellRoot {
     { file: "rocinante.png", title: "ROCINANTE", detail: "CORVETTE / SOL SYSTEM" },
     { file: "tycho.png", title: "TYCHO STATION", detail: "CONSTRUCTION PLATFORM / THE BELT" },
     { file: "nauvoo.png", title: "LDSS NAUVOO", detail: "GENERATION SHIP / THE LONG JOURNEY" },
+    { file: "ceres.jpg", title: "CERES STATION", detail: "SPACEPORT / THE BELT" },
+    { file: "eros.jpg", title: "EROS STATION", detail: "ASTEROID HABITAT / 433 EROS" },
+    { file: "ganymede.jpg", title: "GANYMEDE", detail: "AGRICULTURAL COLONY / JOVIAN SYSTEM" },
+    { file: "io.jpg", title: "IO", detail: "PROSPERO STATION / JOVIAN SYSTEM" },
     { file: "ring.png", title: "THE RING", detail: "SOL GATE / BEYOND THE KNOWN" }
   ]
   property int sceneIndex: 0

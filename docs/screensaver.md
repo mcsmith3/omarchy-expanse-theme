@@ -2,12 +2,25 @@
 
 The screensaver runs as a separate Quickshell application, using cinematic
 artwork and a GPU pixel-dissolve shader. It cycles through the Rocinante, Tycho
-Station, the Nauvoo, and the Ring Gate. It needs no video player or network
+Station, the Nauvoo, Ceres Station, Eros Station, Ganymede, Io, and the Ring Gate.
+It needs no video player or network
 connection after installation.
 
 Tycho uses an unchanged copy of `backgrounds/00-expanse2.png`, selected by the
-theme maintainer as the actual station image from the show. The other three
-scenes are generated artwork.
+theme maintainer as the actual station image from the show. Ceres, Eros,
+Ganymede, and Io also use show images, retained as downloaded. Rocinante,
+Nauvoo, and the Ring use generated artwork. See [source credits](../ARTWORK.md).
+
+The new scenes show Ceres from space, Eros's illuminated docks, Ganymede's
+agricultural colony, and a launch structure at Io's Prospero Station. Io's
+available official still is lower resolution (861 × 484) than the other three
+(2048 pixels wide) and will look softer on large screens.
+
+| Ceres Station | Eros Station |
+| --- | --- |
+| ![Ceres Station](../screensaver/images/ceres.jpg) | ![Eros Station](../screensaver/images/eros.jpg) |
+| **Ganymede** | **Io — Prospero Station** |
+| ![Ganymede](../screensaver/images/ganymede.jpg) | ![Io](../screensaver/images/io.jpg) |
 
 ![Tycho Station using the existing theme wallpaper](screensaver-tycho.png)
 

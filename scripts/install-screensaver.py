@@ -45,7 +45,7 @@ def main():
     match = re.search(r"Quickshell (\d+)\.(\d+)", version)
     if not match or tuple(map(int, match.groups())) < (0, 3):
         raise ValueError("Quickshell 0.3 or later is required for the screensaver app ID.")
-    for asset in ("shell.qml", "pixel-dissolve.frag.qsb", "launch-screensaver", "images/rocinante.png", "images/tycho.png", "images/nauvoo.png", "images/ring.png"):
+    for asset in ("shell.qml", "pixel-dissolve.frag.qsb", "launch-screensaver", "images/rocinante.png", "images/tycho.png", "images/nauvoo.png", "images/ring.png", "images/ceres.jpg", "images/eros.jpg", "images/ganymede.jpg", "images/io.jpg"):
         if not (ROOT / "screensaver" / asset).is_file():
             raise ValueError(f"Missing screensaver asset: {asset}")
     if args.check:

@@ -21,7 +21,7 @@ fi
 lock_state=$(omarchy-shell lock isLocked 2>/dev/null) || exit 1
 [[ $lock_state == false ]] || exit 0
 
-for asset in shell.qml pixel-dissolve.frag.qsb images/rocinante.png images/tycho.png images/nauvoo.png images/ring.png; do
+for asset in shell.qml pixel-dissolve.frag.qsb images/rocinante.png images/tycho.png images/nauvoo.png images/ring.png images/ceres.jpg images/eros.jpg images/ganymede.jpg images/io.jpg; do
   if [[ ! -r $runtime/org.omarchy.screensaver/$asset ]]; then
     echo "Missing Expanse screensaver asset: $asset; using the stock screensaver." >&2
     if [[ $mode == --preview ]]; then exec omarchy-launch-screensaver force; fi

@@ -27,7 +27,20 @@ characters are claimed.
 Tycho Station image from the show. Its source and licensing notes are the same
 as the desktop wallpaper entry below.
 
-The other three images in `screensaver/images/` were generated with OpenAI's built-in
+The four additional show images are retained exactly as downloaded:
+
+| Scene / file | Source |
+| --- | --- |
+| Ceres Station / `ceres.jpg` | [human Mars: Ceres gallery](https://www.humanmars.net/2023/11/ceres-capital-of-belt-in-expanse-tv.html), first exterior image, `01 Ceres in The Expanse TV series_humanmars.net.jpg` |
+| Eros Station / `eros.jpg` | [human Mars: Eros gallery](https://www.humanmars.net/2025/10/eros-site-of-protomolecule-experiment.html), `Eros asteroid in The Expanse TV series_1_humanmars.net.jpg` |
+| Ganymede / `ganymede.jpg` | [human Mars: Ganymede gallery](https://www.humanmars.net/2023/12/ganymede-breadbasket-of-belt-in-expanse.html), `04 Human colony on Ganymede in The Expanse TV series_humanmars.net.jpg` |
+| Io / `io.jpg` | [SYFY: Immolation, Season 3 Episode 6](https://www.syfy.com/the-expanse/photos/immolation-season-3-episode-6), `theexpanse_gallery_306recap_01.jpg`, launch structure at Prospero Station |
+
+These credits identify the download sources, not a license grant. These images
+are excluded from the MIT license; no ownership of the show's artwork is claimed.
+Exact download URLs and file hashes are recorded in `screensaver/show-image-sources.json`.
+
+The Rocinante, Nauvoo, and Ring images were generated with OpenAI's built-in
 image generation tool on 2026-09-25 as unofficial fan artwork. They are not
 production stills. Each generation prompt is saved in `screensaver/*-prompt.txt`.
 The following images were inspected and supplied as visual references; the

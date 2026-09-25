@@ -20,7 +20,7 @@ window transparency setup are not installed by the theme itself.
 - Subtly translucent bar, menus, popups, and notifications.
 - Seven 2880 × 1800 wallpapers, with the original spacecraft image first.
 - Optional Rocinante lock screen with an illuminated hand-terminal password interface.
-- Optional full-screen Rocinante, Tycho, Nauvoo, and Ring Gate screensaver with pixel dissolves.
+- Optional full-screen screensaver with eight Expanse scenes and pixel dissolves.
 - Colors generated through Omarchy’s app templates; no bundled terminal or editor executables.
 
 ![Expanse palette: black, warm peach, copper, rose, coral, and ochre](docs/palette.svg)
@@ -100,11 +100,13 @@ cycling stays independent. See [setup, compatibility, and removal](docs/lock-scr
 
 ![Rocinante full-screen screensaver](docs/screensaver-preview.png)
 
-Four cinematic scenes assemble from pixels, resolve to full detail,
-then dissolve back into black: **Rocinante → Tycho Station → LDSS Nauvoo → the
+Eight cinematic scenes assemble from pixels, resolve to full detail,
+then dissolve back into black: **Rocinante → Tycho Station → LDSS Nauvoo →
+Ceres Station → Eros Station → Ganymede → Io → the
 Ring Gate**. Each scene holds for 12 seconds, with gradual pixel transitions
 between scenes and small copper captions. Tycho uses the existing
-`backgrounds/00-expanse2.png` artwork unchanged; the other three scenes are generated.
+`backgrounds/00-expanse2.png` artwork unchanged. Ceres, Eros, Ganymede, and Io
+use show images; Rocinante, Nauvoo, and the Ring use generated artwork.
 
 ```sh
 python3 ~/.config/omarchy/themes/expanse/scripts/install-screensaver.py --check
