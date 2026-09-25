@@ -6,6 +6,7 @@
 art, derived from the Rocinante emblem supplied as `rocinante.webp`. The original
 artist and download source have not been verified. This fan emblem is excluded
 from the MIT license; no rights in The Expanse's underlying designs are claimed.
+`about/logo.txt` contains the same emblem with terminal color markers and a motto.
 
 ## Rocinante lock screen
 

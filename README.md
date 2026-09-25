@@ -20,7 +20,7 @@ window transparency setup are not installed by the theme itself.
 - Subtly translucent bar, menus, popups, and notifications.
 - Seven 2880 × 1800 wallpapers, with the original spacecraft image first.
 - Optional Rocinante lock screen with an illuminated hand-terminal password interface.
-- Optional Rocinante ASCII/Braille emblem in the About system-information screen.
+- Optional Rocinante diagnostics About screen with shipboard labels and “REMEMBER THE CANT.”
 - Optional full-screen screensaver with eight Expanse scenes and pixel dissolves.
 - Colors generated through Omarchy’s app templates; no bundled terminal or editor executables.
 
@@ -99,7 +99,9 @@ cycling stays independent. See [setup, compatibility, and removal](docs/lock-scr
 
 ## Rocinante About screen
 
-Add the Rocinante emblem beside Omarchy's live system information:
+Add a copper Rocinante emblem and **REMEMBER THE CANT** beside live diagnostics:
+**Ship Systems**, **Flight Software**, and **Service Log**. The shipboard labels
+include Processing core, Data banks, Current watch, and Last maintenance.
 
 ```sh
 python3 ~/.config/omarchy/themes/expanse/scripts/install-about.py --check
@@ -107,8 +109,10 @@ python3 ~/.config/omarchy/themes/expanse/scripts/install-about.py
 omarchy launch about
 ```
 
-The optional integration shows the emblem while Expanse is active and restores
-your previous branding for other themes. See [setup and removal](docs/about.md).
+The optional integration activates the artwork and Fastfetch layout with Expanse,
+then restores your previous logo and Fastfetch configuration for other themes.
+Rerun the installer to upgrade an existing logo-only setup.
+See [setup and removal](docs/about.md).
 
 ## Expanse screensaver
 

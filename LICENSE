@@ -4,7 +4,8 @@ Copyright (c) 2026 Matthew Smith
 
 This license applies to the theme configuration, documentation, palette diagram,
 lock-screen and screensaver source code, shaders, and installers. It does not apply to raster artwork
-or screenshots, the Rocinante emblem in about/rocinante.txt, preview.png, lock-rocinante.png, and images in
+or screenshots, the Rocinante emblems in about/rocinante.txt and about/logo.txt,
+preview.png, lock-rocinante.png, and images in
 backgrounds/, screensaver/images/, and docs/; see ARTWORK.md.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
