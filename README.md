@@ -19,6 +19,7 @@ window transparency setup are not installed by the theme itself.
 - Warm text on black, with a distinct gray text-selection background, including in VS Code.
 - Subtly translucent bar, menus, popups, and notifications.
 - Seven 2880 × 1800 wallpapers, with the original spacecraft image first.
+- Optional Rocinante lock screen with an illuminated hand-terminal password interface.
 - Colors generated through Omarchy’s app templates; no bundled terminal or editor executables.
 
 ![Expanse palette: black, warm peach, copper, rose, coral, and ochre](docs/palette.svg)
@@ -71,6 +72,28 @@ omarchy theme bg next
 All wallpapers retain their original pixels. They use a 16:10 aspect ratio;
 displays with a different shape may crop the edges when filling the screen.
 Gallery names are descriptive labels, not verified artwork titles.
+
+## Rocinante lock screen
+
+![Rocinante operations deck with an illuminated hand-terminal password screen](docs/lock-screen-preview.png)
+
+The optional lock screen combines a generated Rocinante interior with a native
+interface inspired by Miller's illuminated hand terminal: chamfered glass,
+amber engraving, a ribbed control base, and a working password field.
+Password checking and fingerprint authentication use Omarchy's existing locker.
+
+Install the theme first, then run the optional installer **while unlocked**:
+
+```sh
+python3 ~/.config/omarchy/themes/expanse/scripts/install-lock-screen.py --check
+python3 ~/.config/omarchy/themes/expanse/scripts/install-lock-screen.py
+omarchy restart shell
+```
+
+This requires **Omarchy Shell's lock plugin**, not Hyprlock. Installing the theme
+alone adds the artwork; the explicit installer enables the custom lock layout.
+Other themes retain their usual password field and wallpaper. Desktop wallpaper
+cycling stays independent. See [setup, compatibility, and removal](docs/lock-screen.md).
 
 ## A hint of transparency
 

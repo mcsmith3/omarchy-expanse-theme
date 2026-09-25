@@ -2,8 +2,10 @@ MIT License
 
 Copyright (c) 2026 Matthew Smith
 
-This license applies to the theme configuration, documentation, and palette
-diagram. It does not apply to preview.png or images in backgrounds/; see ARTWORK.md.
+This license applies to the theme configuration, documentation, palette diagram,
+lock-screen interface code, and installer. It does not apply to raster artwork
+or screenshots, including preview.png, lock-rocinante.png, and images in
+backgrounds/ and docs/; see ARTWORK.md.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
