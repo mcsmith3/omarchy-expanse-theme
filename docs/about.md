@@ -32,6 +32,9 @@ system defaults take over again. If the Rocinante artwork was already active bef
 the stock Omarchy logo is used for other themes. Existing files are backed up
 under `~/.local/state/omarchy/backups/expanse-about-*`.
 
+The hook is a Bash entry point because Omarchy runs hooks through Bash. It
+delegates restoration and activation to the installed `switch-about.py` helper.
+
 Manual edits to either managed file are preserved when switching away. Reinstall after updating
 the theme to refresh the hook, artwork, and diagnostics config. This also upgrades
 the earlier logo-only installation without replacing its saved original branding.

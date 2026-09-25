@@ -16,7 +16,7 @@ mode.add_argument('--uninstall', action='store_true', help='restore branding and
 args = parser.parse_args()
 hook = home / '.config/omarchy/hooks/theme-set.d/50-expanse-about'
 runtime = home / '.local/share/omarchy-expanse/about'
-assets = ('rocinante.txt', 'logo.txt', 'fastfetch.jsonc')
+assets = ('rocinante.txt', 'logo.txt', 'fastfetch.jsonc', 'switch-about.py')
 
 if args.uninstall:
     if hook.exists():

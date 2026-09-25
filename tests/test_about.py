@@ -3,7 +3,6 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
-import sys
 import tempfile
 import unittest
 
@@ -23,6 +22,9 @@ class AboutSwitching(unittest.TestCase):
         for path in (self.logo, self.config, self.theme):
             path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copytree(ROOT / 'about', self.runtime)
+        hook = self.home / '.config/omarchy/hooks/theme-set.d/50-expanse-about'
+        hook.parent.mkdir(parents=True)
+        shutil.copy2(ROOT / 'about/50-expanse-about', hook)
         self.stock = self.home / 'stock'
         self.stock.mkdir()
         (self.stock / 'icon.txt').write_bytes(b'STOCK LOGO')
@@ -30,8 +32,12 @@ class AboutSwitching(unittest.TestCase):
 
     def switch(self, theme, *args):
         self.theme.write_text(theme)
-        subprocess.run([sys.executable, str(ROOT / 'about/50-expanse-about'), *args],
-                       env=self.env, check=True, capture_output=True)
+        # Exercise Omarchy's real dispatch path: it explicitly invokes Bash.
+        command = ['bash', '/usr/share/omarchy/bin/omarchy-hook', 'theme-set', theme, *args]
+        result = subprocess.run(command, env=self.env, check=True, capture_output=True)
+        # Omarchy reports a failed hook on stdout but returns success.
+        if b'Hook failed:' in result.stdout:
+            raise subprocess.CalledProcessError(1, command, result.stdout, result.stderr)
 
     def test_switch_restores_both_and_repeated_activation_keeps_originals(self):
         self.logo.write_bytes(b'MY LOGO')
