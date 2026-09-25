@@ -1,5 +1,12 @@
 # Artwork credits
 
+## Rocinante About emblem
+
+`about/rocinante.txt` preserves the maintainer's existing About-screen Unicode
+art, derived from the Rocinante emblem supplied as `rocinante.webp`. The original
+artist and download source have not been verified. This fan emblem is excluded
+from the MIT license; no rights in The Expanse's underlying designs are claimed.
+
 ## Rocinante lock screen
 
 `lock-rocinante.png` (1586 × 992) was generated with OpenAI's built-in image

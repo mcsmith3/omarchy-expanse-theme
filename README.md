@@ -20,6 +20,7 @@ window transparency setup are not installed by the theme itself.
 - Subtly translucent bar, menus, popups, and notifications.
 - Seven 2880 × 1800 wallpapers, with the original spacecraft image first.
 - Optional Rocinante lock screen with an illuminated hand-terminal password interface.
+- Optional Rocinante ASCII/Braille emblem in the About system-information screen.
 - Optional full-screen screensaver with eight Expanse scenes and pixel dissolves.
 - Colors generated through Omarchy’s app templates; no bundled terminal or editor executables.
 
@@ -95,6 +96,19 @@ This requires **Omarchy Shell's lock plugin**, not Hyprlock. Installing the them
 alone adds the artwork; the explicit installer enables the custom lock layout.
 Other themes retain their usual password field and wallpaper. Desktop wallpaper
 cycling stays independent. See [setup, compatibility, and removal](docs/lock-screen.md).
+
+## Rocinante About screen
+
+Add the Rocinante emblem beside Omarchy's live system information:
+
+```sh
+python3 ~/.config/omarchy/themes/expanse/scripts/install-about.py --check
+python3 ~/.config/omarchy/themes/expanse/scripts/install-about.py
+omarchy launch about
+```
+
+The optional integration shows the emblem while Expanse is active and restores
+your previous branding for other themes. See [setup and removal](docs/about.md).
 
 ## Expanse screensaver
 

@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+"""Select Expanse About branding; retain the user's branding for other themes."""
+import fcntl
+import os
+from pathlib import Path
+import sys
+
+home = Path.home()
+state = home / '.local/state/omarchy-expanse/about'
+target = home / '.config/omarchy/branding/about.txt'
+art = home / '.local/share/omarchy-expanse/about/rocinante.txt'
+theme_file = home / '.local/state/omarchy/current/theme.name'
+state.mkdir(parents=True, exist_ok=True)
+
+
+def write(path, content):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(path.name + '.expanse-new')
+    temporary.write_bytes(content)
+    temporary.replace(path)
+
+
+with (state / 'lock').open('w') as lock:
+    fcntl.flock(lock, fcntl.LOCK_EX)
+    # Read the current theme rather than a potentially stale queued hook argument.
+    theme = theme_file.read_text().strip() if theme_file.exists() else ''
+    if '--restore' in sys.argv:
+        theme = ''
+    previous = state / 'previous.txt'
+    applied = state / 'applied.txt'
+    absent = state / 'previous-absent'
+    current = target.read_bytes() if target.exists() else None
+    if theme == 'expanse':
+        artwork = art.read_bytes()
+        if not applied.exists():
+            if current is None:
+                absent.touch()
+            else:
+                # When adopting an already-active Rocinante logo, use Omarchy's
+                # stock logo outside Expanse. Keep the original in the backup.
+                stock = Path(os.environ.get('OMARCHY_PATH', '/usr/share/omarchy')) / 'icon.txt'
+                baseline = stock.read_bytes() if current == artwork and stock.exists() else current
+                write(previous, baseline)
+        elif current != applied.read_bytes():
+            # Preserve a manual branding edit until the next theme activation.
+            sys.exit(0)
+        write(target, artwork)
+        write(applied, artwork)
+    elif applied.exists():
+        # A manual edit made after activation belongs to the user; keep it.
+        if current == applied.read_bytes():
+            if previous.exists():
+                write(target, previous.read_bytes())
+            elif absent.exists():
+                target.unlink(missing_ok=True)
+        for path in (previous, applied, absent):
+            path.unlink(missing_ok=True)
