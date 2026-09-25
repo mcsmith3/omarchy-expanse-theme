@@ -20,6 +20,7 @@ window transparency setup are not installed by the theme itself.
 - Subtly translucent bar, menus, popups, and notifications.
 - Seven 2880 × 1800 wallpapers, with the original spacecraft image first.
 - Optional Rocinante lock screen with an illuminated hand-terminal password interface.
+- Optional full-screen Rocinante, Tycho, Nauvoo, and Ring Gate screensaver with pixel dissolves.
 - Colors generated through Omarchy’s app templates; no bundled terminal or editor executables.
 
 ![Expanse palette: black, warm peach, copper, rose, coral, and ochre](docs/palette.svg)
@@ -94,6 +95,35 @@ This requires **Omarchy Shell's lock plugin**, not Hyprlock. Installing the them
 alone adds the artwork; the explicit installer enables the custom lock layout.
 Other themes retain their usual password field and wallpaper. Desktop wallpaper
 cycling stays independent. See [setup, compatibility, and removal](docs/lock-screen.md).
+
+## Expanse screensaver
+
+![Rocinante full-screen screensaver](docs/screensaver-preview.png)
+
+Four cinematic scenes assemble from pixels, resolve to full detail,
+then dissolve back into black: **Rocinante → Tycho Station → LDSS Nauvoo → the
+Ring Gate**. Each scene holds for 12 seconds, with gradual pixel transitions
+between scenes and small copper captions. Tycho uses the existing
+`backgrounds/00-expanse2.png` artwork unchanged; the other three scenes are generated.
+
+```sh
+python3 ~/.config/omarchy/themes/expanse/scripts/install-screensaver.py --check
+python3 ~/.config/omarchy/themes/expanse/scripts/install-screensaver.py
+omarchy restart shell
+```
+
+The optional installer activates this screensaver for Expanse and retains the
+stock screensaver for other themes. Your existing idle and lock times remain
+in effect. This is a screensaver, not an authentication screen. Move the mouse,
+click, scroll, or press a key to dismiss it before the normal lock deadline.
+
+Preview it immediately:
+
+```sh
+~/.local/share/omarchy-expanse/launch-screensaver --preview
+```
+
+See [installation, removal, and animation details](docs/screensaver.md).
 
 ## A hint of transparency
 

@@ -20,6 +20,30 @@ The MIT license covers the interface code and installer. Raster artwork and
 screenshots are excluded; no rights in The Expanse's underlying designs or
 characters are claimed.
 
+## Screensaver scenes
+
+`screensaver/images/tycho.png` is an unchanged copy of
+`backgrounds/00-expanse2.png`, selected by the theme maintainer as the actual
+Tycho Station image from the show. Its source and licensing notes are the same
+as the desktop wallpaper entry below.
+
+The other three images in `screensaver/images/` were generated with OpenAI's built-in
+image generation tool on 2026-09-25 as unofficial fan artwork. They are not
+production stills. Each generation prompt is saved in `screensaver/*-prompt.txt`.
+The following images were inspected and supplied as visual references; the
+reference downloads are not redistributed in this repository:
+
+| Scene | Visual reference |
+| --- | --- |
+| Rocinante | [The Expanse Wiki: Rocinante](https://expanse.fandom.com/wiki/Rocinante), `Rocinante.png` |
+| LDSS Nauvoo | [The Expanse Wiki: Nauvoo](https://expanse.fandom.com/wiki/Nauvoo_(TV)), `S02e04nauvoo16m00s.jpg` |
+| Ring Gate | [Donald Fernandes: The Ring — The Human Sol Gate](https://donaldfernandes.medium.com/the-ring-the-human-sol-gate-530e7b1d2607), the illustrated ring reference |
+
+`docs/screensaver-preview.png`, `docs/screensaver-tycho.png`, and
+`docs/screensaver-dissolve.png` show the
+running screensaver. The source code, shader, launcher, and installer are MIT
+licensed; raster artwork and screenshots are excluded.
+
 ## Desktop wallpapers
 
 The seven wallpapers were sourced from the

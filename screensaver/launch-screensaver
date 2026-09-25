@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+runtime="${EXPANSE_SCREENSAVER_ROOT:-$HOME/.local/share/omarchy-expanse}"
+mode="${1:-}"
+case "$mode" in
+  ""|force|--preview) ;;
+  *) echo "Usage: $0 [--preview|force]" >&2; exit 2 ;;
+esac
+
+theme_name=""
+[[ ! -f $HOME/.local/state/omarchy/current/theme.name ]] || read -r theme_name < "$HOME/.local/state/omarchy/current/theme.name"
+if [[ $theme_name != expanse && $mode != --preview ]]; then
+  exec omarchy-launch-screensaver "$@"
+fi
+
+# Preserve Omarchy's screensaver-off preference and never cover a live locker.
+if [[ $mode != force && $mode != --preview ]] && omarchy-toggle-enabled screensaver-off; then
+  exit 0
+fi
+lock_state=$(omarchy-shell lock isLocked 2>/dev/null) || exit 1
+[[ $lock_state == false ]] || exit 0
+
+for asset in shell.qml pixel-dissolve.frag.qsb images/rocinante.png images/tycho.png images/nauvoo.png images/ring.png; do
+  if [[ ! -r $runtime/org.omarchy.screensaver/$asset ]]; then
+    echo "Missing Expanse screensaver asset: $asset; using the stock screensaver." >&2
+    if [[ $mode == --preview ]]; then exec omarchy-launch-screensaver force; fi
+    exec omarchy-launch-screensaver "$@"
+  fi
+done
+
+exec 9>"${XDG_RUNTIME_DIR:-/tmp}/expanse-screensaver-${UID}.lock"
+flock -n 9 || exit 0
+pgrep -A -f '[o]rg.omarchy.screensaver' >/dev/null && exit 0
+
+# App ID is also in the config path so omarchy-system-lock's existing cleanup
+# recognizes this process. No alternate lock timer or authentication is used.
+export QS_APP_ID=org.omarchy.screensaver
+exec qs -n -p "$runtime/org.omarchy.screensaver"
