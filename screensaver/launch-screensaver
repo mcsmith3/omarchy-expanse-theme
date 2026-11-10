@@ -31,7 +31,12 @@ done
 
 exec 9>"${XDG_RUNTIME_DIR:-/tmp}/expanse-screensaver-${UID}.lock"
 flock -n 9 || exit 0
-pgrep -A -f '[o]rg.omarchy.screensaver' >/dev/null && exit 0
+# Skip if a screensaver window (this one or the stock one) is already open.
+# Checking windows rather than command lines avoids false matches from any
+# process that merely mentions the app ID.
+if hyprctl clients -j 2>/dev/null | jq -e 'any(.[]; .class == "org.omarchy.screensaver")' >/dev/null; then
+  exit 0
+fi
 
 # App ID is also in the config path so omarchy-system-lock's existing cleanup
 # recognizes this process. No alternate lock timer or authentication is used.

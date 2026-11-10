@@ -38,7 +38,7 @@ def main():
             raise ValueError(f"{target} is not a clone of omarchy.idle.")
         if (target / "Service.qml").read_text() not in (stock, updated):
             raise ValueError("Your local idle plugin has other changes; merge manually. No files changed.")
-    for command in ("qs", "omarchy", "omarchy-shell", "flock", "pgrep"):
+    for command in ("qs", "omarchy", "omarchy-shell", "flock", "hyprctl", "jq"):
         if not shutil.which(command):
             raise ValueError(f"Required command is missing: {command}")
     version = subprocess.check_output(["qs", "--version"], text=True)
