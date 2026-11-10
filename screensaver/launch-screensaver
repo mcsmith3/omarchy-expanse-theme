@@ -36,4 +36,36 @@ pgrep -A -f '[o]rg.omarchy.screensaver' >/dev/null && exit 0
 # App ID is also in the config path so omarchy-system-lock's existing cleanup
 # recognizes this process. No alternate lock timer or authentication is used.
 export QS_APP_ID=org.omarchy.screensaver
-exec qs -n -p "$runtime/org.omarchy.screensaver"
+qs -n -p "$runtime/org.omarchy.screensaver" &
+saver=$!
+
+# Omarchy's window rules park every screensaver window on a hidden special
+# workspace and leave showing it to the launcher. Put each window on its own
+# monitor's screensaver workspace, or on a special workspace that monitor is
+# already showing (like the scratchpad), so that one is still open afterwards.
+saver_windows() {
+  hyprctl clients -j 2>/dev/null |
+    jq -r '.[] | select(.mapped and .class == "org.omarchy.screensaver") | "\(.address) \(.monitor) \(.workspace.name)"'
+}
+focused=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
+monitor_count=$(hyprctl monitors -j | jq 'length')
+declare -A placed=()
+deadline=$((SECONDS + 5))
+while (( ${#placed[@]} < monitor_count && SECONDS < deadline )) && kill -0 "$saver" 2>/dev/null; do
+  while read -r address monitor workspace; do
+    [[ -n $address && -z ${placed[$address]:-} ]] || continue
+    read -r name special < <(hyprctl monitors -j | jq -r --argjson id "$monitor" '.[] | select(.id == $id) | "\(.name) \(.specialWorkspace.name)"')
+    target=${special:-special:screensaver-$name}
+    if [[ $workspace == "$target" ]] ||
+      hyprctl dispatch "hl.dsp.window.move({ workspace = \"$target\", window = \"address:$address\" })" >/dev/null 2>&1 ||
+      hyprctl dispatch movetoworkspace "$target,address:$address" >/dev/null 2>&1; then
+      placed[$address]=1
+    fi
+  done < <(saver_windows)
+  (( ${#placed[@]} >= monitor_count )) || sleep 0.1
+done
+if (( monitor_count > 1 )) && [[ -n $focused ]]; then
+  hyprctl dispatch "hl.dsp.focus({ monitor = \"$focused\" })" >/dev/null 2>&1 || hyprctl dispatch focusmonitor "$focused" >/dev/null 2>&1 || true
+fi
+
+wait "$saver"
